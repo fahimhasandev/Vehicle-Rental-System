@@ -112,7 +112,6 @@ export const deleteVehicle = async (req: Request, res: Response) => {
 			res.status(200).json({
 				success: true,
 				message: 'Vehicle Delete successfully.',
-				data: result.rows,
 			});
 		}
 	} catch (err: any) {

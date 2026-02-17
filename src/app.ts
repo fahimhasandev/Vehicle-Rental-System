@@ -2,6 +2,7 @@ import express, { Request, Response } from 'express';
 import initDB from './config/db';
 import { userRoutes } from './modules/Auth/auth.routes';
 import { vehicleRoutes } from './modules/Vehicles/vehicle.routes';
+import { bookingRoutes } from './modules/Bookings/booking.routes';
 const app = express();
 
 // parse -json data
@@ -20,6 +21,9 @@ app.use('/api/v1/auth', userRoutes);
 
 // Vehicles
 app.use('/api/v1/vehicles', vehicleRoutes);
+
+// Booking
+app.use('/api/v1/bookings', bookingRoutes);
 
 //handle route
 app.use((req, res) => {
